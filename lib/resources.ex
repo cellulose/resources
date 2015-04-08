@@ -3,9 +3,6 @@ defmodule Resources do
   Simple tool to get system resource information.
   
   Sub Modules really should be called directly.
-  
-  Note: Currently requires Hub which should be extracted and implemented as a
-  callback.
   """
   
   @type t :: list | map

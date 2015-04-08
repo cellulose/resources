@@ -1,6 +1,6 @@
 # Resources
 
-A simple Elixir module to gather system resource information or monitor it at a set interval on a *linux* system.
+A simple Elixir module to gather system resource information or monitor it at a set interval on a *linux* system. Most other systems will just return :error or {:error, _}.
 
 Resources is part of the Cellulose group of projects which are intented for
 embeded Elixir/Erlang systems but may find practical application outside of this
@@ -11,30 +11,29 @@ offer any suggestions!
   
 ## Usage Example
   
-Polling example 1: Default usage
+Polling example 1:
 
-    Resources.start_monitor
+    Resources.start_monitor(callback: fn(args) -> IO.write "#{inspect args}" end)
     ...or...
-    Resources.Monitor.start
+    Resources.Monitor.start(callback: fn(args) -> IO.write "#{inspect args}" end)
 
-Then, every 5 seconds Hub will be updated at the point [:sys, :resources]
-with all information available by Resources
+Then, every 5 seconds the callback function will get called with all information found by Resources
 
 Polling example 2: Start polling server with disk filtering
 
-    Resources.Monitor.start %{disks: [root: "/", dev: "/dev"]}
+    Resources.Monitor.start [disks: [root: "/", dev: "/dev"], 
+    callback: fn(args) -> IO.write "#{inspect args}" end]
 
-Then, every 5 seconds Hub will be updated as in the first example except
-only the `/` and `/dev` disks will be available in [:sys, :resource, :disks]
+Then, every 5 seconds the callback will be updated as in the first example except only the `/` and `/dev` disks will be available to the callback
 and they will have the keys `:root` and `:dev` respectivly.
 
 Standalone examples:
 
-    Resources.Cpu.info
+    iex> Resources.Cpu.info
     [load_1_min: "0.00", load_5_min: "0.01", load_15_min: "0.05",
     running_tasks: "2/207", last_pid: "1553"]
 
-    Resources.Memory.info
+    ied> Resources.Memory.info
     [mem_free: 2614052, mem_total: 4044756]
 
 ## Contributing
