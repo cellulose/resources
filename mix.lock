@@ -1,6 +1,8 @@
 %{"cowboy": {:hex, :cowboy, "1.0.0"},
   "cowlib": {:hex, :cowlib, "1.0.1"},
+  "earmark": {:hex, :earmark, "0.1.15"},
   "echo": {:git, "git@github.com:ghitchens/echo.git", "03dfb5ae3ef0f5b984c725f62fd736011eba36b5", [branch: :dev]},
   "erlang-serial": {:git, "git://github.com/ghitchens/erlang-serial.git", "974aa9e7f326a557de7ee7e7c4eb888ed32d45c0", []},
+  "ex_doc": {:hex, :ex_doc, "0.7.2"},
   "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "e50af6e109cb03bd26acf715cbc77de746507d1d", [ref: "v1.4.3"]},
   "ranch": {:hex, :ranch, "1.0.0"}}

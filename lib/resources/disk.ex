@@ -14,7 +14,7 @@ defmodule Resources.Disk do
   
   The `:disks` options may be passed with a list of keys and mount points to filter on
   
-  ##Examples
+  ## Examples
   
       iex> Resources.Disk.info
       [/: [Filesystem: "/dev/disk1", "512-blocks": "487867392", Used: "460837744",

@@ -16,19 +16,19 @@ defmodule Resources.Monitor do
   
   ## Examples
   
-  iex> Resources.Monitor.start
-  {:ok, #PID<0.146.0>}
+      iex> Resources.Monitor.start
+      {:ok, #PID<0.146.0>}
   
-  iex> :hub.dump
-  {{"0513306b4ce11109832c52258ccf661b", 1},
-   [sys: {1,
-     [resources: {1,
-       [cpu: {1,
-         [last_pid: {1, "16237"}, load_15_min: {1, "0.05"},
-          load_1_min: {1, "0.00"}, load_5_min: {1, "0.01"},
-          running_tasks: {1, "1/204"}]},
-          .....
-          ]}]}]}
+      iex> :hub.dump
+      {{"0513306b4ce11109832c52258ccf661b", 1},
+       [sys: {1,
+         [resources: {1,
+           [cpu: {1,
+             [last_pid: {1, "16237"}, load_15_min: {1, "0.05"},
+              load_1_min: {1, "0.00"}, load_5_min: {1, "0.01"},
+              running_tasks: {1, "1/204"}]},
+              .....
+              ]}]}]}
   """
   use GenServer
   require Hub

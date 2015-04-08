@@ -15,6 +15,8 @@ defmodule Resources.Mixfile do
   ]
 
   defp deps do
-    [{ :echo, git: "git@github.com:ghitchens/echo.git", branch: :dev}]
+    [{ :echo, git: "git@github.com:ghitchens/echo.git", branch: :dev},
+     {:earmark, "~> 0.1", only: :dev},
+     {:ex_doc, "~> 0.7", only: :dev}]
   end
 end
